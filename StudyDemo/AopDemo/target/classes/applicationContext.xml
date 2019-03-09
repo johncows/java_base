@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:p="http://www.springframework.org/schema/p" xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+    <!--注册切面-->
+    <bean class="com.kk.Advice.PayAdvice2" name="payAdvice2"/>
+    <bean class="com.kk.Advice.NoAnnotation.PayAdvicePram" name="advicePram"/>
+    <bean class="com.kk.Advice.NoAnnotation.PayAdviceSimple" name="adviceSimple"/>
+
+
+
+
+
+
+
+    <aop:config proxy-target-class="true">
+        <!--引用切面-->
+        <aop:aspect ref="payAdvice2">
+            <!--简易切点配置-->
+            <aop:pointcut id="byProduct" expression="execution(* com.kk.Pojo.Product.buyProduct(..))"/>
+            <aop:before method="beforePay" pointcut-ref="byProduct"></aop:before>
+            <!--标准配置-->
+            <aop:after method="afterPay" pointcut="execution(* com.kk.Pojo.Product.buyProduct(..))"/>
+        </aop:aspect>
+
+        <aop:aspect ref="advicePram">
+            <aop:pointcut id="checkProductStatus"
+              expression="execution(* com.kk.Pojo.Product.checkProductStatus(String)) and args(status)"/>
+            <aop:before method="fun1" pointcut-ref="checkProductStatus"/>
+        </aop:aspect>
+
+        <aop:aspect ref="adviceSimple">
+            <aop:pointcut id="byProduct" expression="execution(* com.kk.Pojo.Product.buyProduct(..))"/>
+            <aop:around method="around" pointcut-ref="byProduct"/>
+        </aop:aspect>
+
+
+
+        <!--通过aop进行功能扩展-->
+
+        <!--
+                types-matching      需要代理的目标类型
+                implement-interface 扩展类型的接口
+                default-impl        扩展类型的默认实现类
+
+                将目标类型交给Spring管理
+                通过接口类型强转 实现扩展方法
+        -->
+        <aop:aspect>
+            <aop:declare-parents types-matching="com.kk.Pojo.People+"
+                                 implement-interface="com.kk.Advice.extend.SecondHandSell"
+                                 default-impl="com.kk.Advice.extend.ProductExtend"/>
+        </aop:aspect>
+
+
+    </aop:config>
+
+
+    <!--构造器注入-->
+    <bean class="com.kk.Pojo.Product" name="product" c:price="132" c:pName="飞机杯"/>
+    <!--属性注入-->
+    <bean class="com.kk.Pojo.Product" name="product2" p:pName="润滑油" p:price="20" />
+
+    <bean class="com.kk.Pojo.Student" name="student"/>
+
+</beans>
