@@ -2,6 +2,7 @@ package com.kk;
 
 import static org.junit.Assert.assertTrue;
 
+import com.kk.run.ThreadPoolTest;
 import org.junit.Test;
 
 /**
@@ -9,12 +10,8 @@ import org.junit.Test;
  */
 public class AppTest 
 {
-    /**
-     * Rigorous Test :-)
-     */
-    @Test
-    public void shouldAnswerWithTrue()
-    {
-        assertTrue( true );
-    }
+
+
+
+
 }
