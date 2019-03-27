@@ -1,7 +1,6 @@
 package com.kk.jdbc;
 
 import com.kk.pojo.User;
-import org.springframework.test.context.TestExecutionListeners;
 
 import java.security.PublicKey;
 import java.sql.*;

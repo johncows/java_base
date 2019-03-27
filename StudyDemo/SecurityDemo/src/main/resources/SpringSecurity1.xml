@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+
+    <security:http>
+        <!--路径'/admin/*'需要权限ROLE_ADMIN-->
+       <security:intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')"/>
+
+
+        <!--以"/user"开头的所有路径需要ROLE_USER权限-->
+        <security:intercept-url pattern="/user/**" access="hasRole('ROLE_USER')" />
+
+        <!--默认登录页面 loginPage 验证正确则默认跳转home主页-->
+       <security:form-login login-page="/loginPage" default-target-url="/home"/>
+
+        <!--退出登录后跳转的页面-->
+        <security:logout logout-url="/loginPage"/>
+
+        <!--没有权限跳转的位置-->
+        <security:access-denied-handler error-page="/error"/>
+
+    </security:http>
+
+
+
+
+
+</beans>
