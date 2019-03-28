@@ -3,6 +3,8 @@ package com.kk.controller;
 import com.fasterxml.jackson.annotation.JsonView;
 import com.kk.Exception.MyException;
 import com.kk.dto.User;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -18,7 +20,8 @@ public class MyController {
      */
     @JsonView(User.UserDetailView.class)
     @GetMapping(value = "{id:\\d+}")
-    public User getInfo(@PathVariable String id) {
+    @ApiOperation(value = "获取信息")
+    public User getInfo(@ApiParam(value = "用户id") @PathVariable String id) {
         User user = new User();
         user.setName("哇哦");
         user.setSex("男");
