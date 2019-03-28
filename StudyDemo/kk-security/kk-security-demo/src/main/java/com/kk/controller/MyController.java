@@ -3,7 +3,6 @@ package com.kk.controller;
 import com.fasterxml.jackson.annotation.JsonView;
 import com.kk.Exception.MyException;
 import com.kk.dto.User;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
