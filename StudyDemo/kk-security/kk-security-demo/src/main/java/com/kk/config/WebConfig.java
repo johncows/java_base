@@ -1,5 +1,7 @@
 package com.kk.config;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
@@ -30,6 +32,11 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         filterRegistrationBean.setFilter(timeFilter);
         filterRegistrationBean.addUrlPatterns("/time");
         return filterRegistrationBean;
+    }
+
+    @Bean
+    public Logger logger(){
+        return LoggerFactory.getLogger(getClass());
     }
 
 

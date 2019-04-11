@@ -16,6 +16,7 @@
         <module>ThreadDemo</module>
         <module>kk-security</module>
         <module>kk-security</module>
+        <module>HashTestDemo</module>
     </modules>
 
 
