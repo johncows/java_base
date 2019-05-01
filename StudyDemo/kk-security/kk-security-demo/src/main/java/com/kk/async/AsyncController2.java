@@ -26,7 +26,7 @@ public class AsyncController2 {
         mockQueue.setPlaceOrder(random);
 
         DeferredResult<String> result = new DeferredResult<>();
-        deferredResultHolder.getMap().put(random,result);
+        deferredResultHolder.getMap().put(random, result);
 
         logger.error("退出主线程");
         return result;

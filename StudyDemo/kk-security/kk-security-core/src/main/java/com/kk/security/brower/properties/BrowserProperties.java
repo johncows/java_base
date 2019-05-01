@@ -5,6 +5,6 @@ import lombok.Data;
 
 @Data
 public class BrowserProperties {
-    private String loginPage= "/kk-signIn.html";
+    private String loginPage = "/kk-signIn.html";
     private LoginType loginType = LoginType.JSON;
 }

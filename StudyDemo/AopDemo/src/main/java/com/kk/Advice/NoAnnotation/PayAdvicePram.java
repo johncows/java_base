@@ -12,11 +12,9 @@ import org.aspectj.lang.annotation.Pointcut;
 public class PayAdvicePram {
 
 
-
-
-    public void fun1(String status){
+    public void fun1(String status) {
         System.out.println("执行方法前--->" + status);
-        status="hh";
+        status = "hh";
     }
 
 

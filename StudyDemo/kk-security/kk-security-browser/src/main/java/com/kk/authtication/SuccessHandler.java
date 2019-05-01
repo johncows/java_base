@@ -23,16 +23,16 @@ public class SuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
     @Autowired
     private SecurityProperties securityProperties;
 
-//    springMvc自动注册
+    //    springMvc自动注册
     @Autowired
     private ObjectMapper objectMapper;
 
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
-                                            Authentication authentication) throws IOException, ServletException {
+                                        Authentication authentication) throws IOException, ServletException {
         logger.info("success Login");
-        if(!LoginType.JSON.equals(securityProperties.getBrowser().getLoginType())){
-            super.onAuthenticationSuccess(request,response,authentication);
+        if (!LoginType.JSON.equals(securityProperties.getBrowser().getLoginType())) {
+            super.onAuthenticationSuccess(request, response, authentication);
         }
         response.setContentType("application/json;charset=UTF-8");
         response.getWriter().write(objectMapper.writeValueAsString(authentication));

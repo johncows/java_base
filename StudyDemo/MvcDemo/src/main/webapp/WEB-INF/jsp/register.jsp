@@ -12,12 +12,12 @@
 </head>
 <body>
 
-        <form action="register.action" method="post" enctype="multipart/form-data">
-            姓名<input name="name" type="text"/><br>
-            密码<input name="password" type="password"/><br>
-            照片<input name="image" type="file" >
-            <input type="submit" name="提交">
-        </form>
+<form action="register.action" method="post" enctype="multipart/form-data">
+    姓名<input name="name" type="text"/><br>
+    密码<input name="password" type="password"/><br>
+    照片<input name="image" type="file">
+    <input type="submit" name="提交">
+</form>
 
 </body>
 </html>

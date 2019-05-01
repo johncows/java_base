@@ -21,13 +21,15 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 
     @Autowired
     private HandlerInterceptor timeIntercept;
+
     /**
      * 注册第三方过滤器 可采用Bean注册
      * 注意 在配置类中配置拦截器后 会自动关闭Springboot默认拦截器属性(拦截所有)
+     *
      * @return
      */
     @Bean
-    public FilterRegistrationBean FilterRegistrationBean(){
+    public FilterRegistrationBean FilterRegistrationBean() {
         FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();
         filterRegistrationBean.setFilter(timeFilter);
         filterRegistrationBean.addUrlPatterns("/time");
@@ -35,7 +37,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     }
 
     @Bean
-    public Logger logger(){
+    public Logger logger() {
         return LoggerFactory.getLogger(getClass());
     }
 

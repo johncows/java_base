@@ -6,14 +6,14 @@
 
     <security:http>
         <!--路径'/admin/*'需要权限ROLE_ADMIN-->
-       <security:intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')"/>
+        <security:intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')"/>
 
 
         <!--以"/user"开头的所有路径需要ROLE_USER权限-->
-        <security:intercept-url pattern="/user/**" access="hasRole('ROLE_USER')" />
+        <security:intercept-url pattern="/user/**" access="hasRole('ROLE_USER')"/>
 
         <!--默认登录页面 loginPage 验证正确则默认跳转home主页-->
-       <security:form-login login-page="/loginPage" default-target-url="/home"/>
+        <security:form-login login-page="/loginPage" default-target-url="/home"/>
 
         <!--退出登录后跳转的页面-->
         <security:logout logout-url="/loginPage"/>
@@ -22,9 +22,6 @@
         <security:access-denied-handler error-page="/error"/>
 
     </security:http>
-
-
-
 
 
 </beans>

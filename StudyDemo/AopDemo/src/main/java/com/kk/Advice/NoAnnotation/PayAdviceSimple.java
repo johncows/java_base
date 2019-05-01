@@ -6,10 +6,11 @@ import org.aspectj.lang.annotation.*;
 public class PayAdviceSimple {
 
 
-    public void byProduct(){}
+    public void byProduct() {
+    }
 
 
-    public void around(ProceedingJoinPoint joinPoint){
+    public void around(ProceedingJoinPoint joinPoint) {
         try {
             System.out.println("方法执行前");
             joinPoint.proceed();

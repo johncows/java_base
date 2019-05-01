@@ -20,13 +20,13 @@ public class MyUserDetailService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
-        logger.info("用户名为"+s);
+        logger.info("用户名为" + s);
 
         String encode = passwordEncoder.encode("123");
-        logger.info("数据库密码为 "+ encode );
+        logger.info("数据库密码为 " + encode);
 
-        return new User(s,encode,
-                true,true,true,true,
+        return new User(s, encode,
+                true, true, true, true,
                 AuthorityUtils.createAuthorityList("admin"));
     }
 

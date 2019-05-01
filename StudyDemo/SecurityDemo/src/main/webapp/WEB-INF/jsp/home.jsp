@@ -11,6 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-    <h1>恭喜你登录成功</h1>
+<h1>恭喜你登录成功</h1>
 </body>
 </html>

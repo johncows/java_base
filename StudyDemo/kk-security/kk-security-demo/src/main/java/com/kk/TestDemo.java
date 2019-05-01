@@ -11,7 +11,7 @@ import java.io.IOException;
 public class TestDemo {
 
     @Test
-    public void  fun() throws IOException {
+    public void fun() throws IOException {
         User user = new User();
         user.setName("哇哦");
         user.setSex("男");

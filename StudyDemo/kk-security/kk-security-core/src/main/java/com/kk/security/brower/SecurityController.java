@@ -28,7 +28,7 @@ public class SecurityController {
 
     private RequestCache requestCache = new HttpSessionRequestCache();
 
-    private RedirectStrategy redirectStrategy =  new DefaultRedirectStrategy();
+    private RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
 
 
     @Autowired
@@ -40,13 +40,13 @@ public class SecurityController {
 //      引发跳转的请求
         SavedRequest savedRequest = requestCache.getRequest(request, response);
 
-        if(savedRequest.getRedirectUrl()!=null){
+        if (savedRequest.getRedirectUrl() != null) {
             String loginPage = securityProperties.getBrowser().getLoginPage();
-            logger.info(loginPage+"---------");
+            logger.info(loginPage + "---------");
             String redirectUrl = savedRequest.getRedirectUrl();
-            logger.info("引发跳转的url为"+redirectUrl);
-            if(redirectUrl.endsWith(".html")){
-                redirectStrategy.sendRedirect(request,response,loginPage);
+            logger.info("引发跳转的url为" + redirectUrl);
+            if (redirectUrl.endsWith(".html")) {
+                redirectStrategy.sendRedirect(request, response, loginPage);
             }
         }
 

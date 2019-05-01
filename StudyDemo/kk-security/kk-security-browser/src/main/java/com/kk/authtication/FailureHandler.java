@@ -29,12 +29,11 @@ public class FailureHandler extends SimpleUrlAuthenticationFailureHandler {
     private SecurityProperties securityProperties;
 
 
-
     @Override
     public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception) throws IOException, ServletException {
         logger.info("fail logging");
-        if(!LoginType.JSON.equals(securityProperties.getBrowser().getLoginType())){
-            super.onAuthenticationFailure(request,response,exception);
+        if (!LoginType.JSON.equals(securityProperties.getBrowser().getLoginType())) {
+            super.onAuthenticationFailure(request, response, exception);
         }
         response.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
         response.setContentType("application/json;charset=UTF-8");

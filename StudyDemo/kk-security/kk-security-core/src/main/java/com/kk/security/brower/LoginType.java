@@ -1,6 +1,6 @@
 package com.kk.security.brower;
 
-public enum  LoginType {
+public enum LoginType {
     REDIRECT,
     JSON
 

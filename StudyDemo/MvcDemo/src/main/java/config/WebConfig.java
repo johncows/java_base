@@ -21,8 +21,6 @@ import org.springframework.web.servlet.view.JstlView;
 public class WebConfig extends WebMvcConfigurerAdapter {
 
 
-
-
     //    配置jsp视图解析器
     @Bean
     public ViewResolver viewResolver() {
@@ -36,7 +34,6 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     }
 
 
-
     //    静态资源处理
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
@@ -48,10 +45,9 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     }
 
 
-
-//  配置多媒体处理器 默认缓存容器
+    //  配置多媒体处理器 默认缓存容器
     @Bean
-    public MultipartResolver multipartResolver1(){
+    public MultipartResolver multipartResolver1() {
         CommonsMultipartResolver commonsMultipartResolver = new CommonsMultipartResolver();
         commonsMultipartResolver.setDefaultEncoding("utf-8");
         commonsMultipartResolver.setMaxUploadSize(54800);
@@ -65,21 +61,10 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 
      */
 //    @Bean
-    public MultipartResolver multipartResolver2(){
-        StandardServletMultipartResolver resolver  = new StandardServletMultipartResolver();
+    public MultipartResolver multipartResolver2() {
+        StandardServletMultipartResolver resolver = new StandardServletMultipartResolver();
         return resolver;
     }
-
-
-
-
-
-
-
-
-
-
-
 
 
 }

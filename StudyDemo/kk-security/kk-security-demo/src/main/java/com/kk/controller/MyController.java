@@ -32,23 +32,22 @@ public class MyController {
 
 
     /**
-     *  post添加请求
-     *  针对post接受参数 进行校验
-     *  1. 普通校验  @NotEmpty 非空校验 利用message返回报错信息
-     *  2. 自定义校验 @MyConstraint 默认返回false
+     * post添加请求
+     * 针对post接受参数 进行校验
+     * 1. 普通校验  @NotEmpty 非空校验 利用message返回报错信息
+     * 2. 自定义校验 @MyConstraint 默认返回false
      */
     @JsonView(User.UserDetailView.class)
     @PostMapping
-    public User createUser(@RequestBody @Valid User user ) {
+    public User createUser(@RequestBody @Valid User user) {
         return user;
     }
 
 
     @GetMapping("error")
-    public  User throwException(){
+    public User throwException() {
         throw new MyException("一个运行时的异常错误");
     }
-
 
 
 }

@@ -11,11 +11,6 @@
     <bean class="com.kk.Advice.NoAnnotation.PayAdviceSimple" name="adviceSimple"/>
 
 
-
-
-
-
-
     <aop:config proxy-target-class="true">
         <!--引用切面-->
         <aop:aspect ref="payAdvice2">
@@ -28,7 +23,7 @@
 
         <aop:aspect ref="advicePram">
             <aop:pointcut id="checkProductStatus"
-              expression="execution(* com.kk.Pojo.Product.checkProductStatus(String)) and args(status)"/>
+                          expression="execution(* com.kk.Pojo.Product.checkProductStatus(String)) and args(status)"/>
             <aop:before method="fun1" pointcut-ref="checkProductStatus"/>
         </aop:aspect>
 
@@ -36,7 +31,6 @@
             <aop:pointcut id="byProduct" expression="execution(* com.kk.Pojo.Product.buyProduct(..))"/>
             <aop:around method="around" pointcut-ref="byProduct"/>
         </aop:aspect>
-
 
 
         <!--通过aop进行功能扩展-->
@@ -62,7 +56,7 @@
     <!--构造器注入-->
     <bean class="com.kk.Pojo.Product" name="product" c:price="132" c:pName="飞机杯"/>
     <!--属性注入-->
-    <bean class="com.kk.Pojo.Product" name="product2" p:pName="润滑油" p:price="20" />
+    <bean class="com.kk.Pojo.Product" name="product2" p:pName="润滑油" p:price="20"/>
 
     <bean class="com.kk.Pojo.Student" name="student"/>
 

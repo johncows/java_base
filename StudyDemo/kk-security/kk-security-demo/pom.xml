@@ -95,9 +95,7 @@
         </dependency>
 
 
-
-
-   </dependencies>
+    </dependencies>
 
     <build>
         <finalName>kk-security-demo</finalName>

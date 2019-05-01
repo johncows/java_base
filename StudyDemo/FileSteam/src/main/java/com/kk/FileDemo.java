@@ -21,12 +21,12 @@ public class FileDemo {
 
         long time = new Date().getTime();
         writeFileByChar(path1);
-        System.out.println("该操作耗时" + (new Date().getTime()-time)+"毫秒");
+        System.out.println("该操作耗时" + (new Date().getTime() - time) + "毫秒");
 
     }
 
     //读取文件夹中的文件及其属性
-    public static void showFolder(String path){
+    public static void showFolder(String path) {
         File file = new File(path);
         File[] files = file.listFiles();
         for (File file1 : files) {
@@ -35,15 +35,15 @@ public class FileDemo {
     }
 
 
-//    以字节流的形式读取文件
+    //    以字节流的形式读取文件
     public static void readFileByStream(String path) throws IOException {
-        
+
         FileInputStream fls = new FileInputStream(path);
 
         System.out.println("该文件字节数 : " + fls.available());
-        int temp ;
-        while ((temp = fls.read())!=-1){
-            System.out.print(temp+" ");
+        int temp;
+        while ((temp = fls.read()) != -1) {
+            System.out.print(temp + " ");
         }
         fls.close();
     }
@@ -51,13 +51,14 @@ public class FileDemo {
 
     /**
      * 代码解析
-     *      fileReader默认解析为UTF-8 再 InputStreamReader是 FIleReader的子类
-     *      通过构造函数即可理解
-     *      BufferedReader作为缓冲区 原因是 fileReader.nextLine 的底层是 先获取字节再转为字符
+     * fileReader默认解析为UTF-8 再 InputStreamReader是 FIleReader的子类
+     * 通过构造函数即可理解
+     * BufferedReader作为缓冲区 原因是 fileReader.nextLine 的底层是 先获取字节再转为字符
+     *
      * @param path
      * @throws IOException
      */
-    public static  void readFileByChar(String path) throws IOException {
+    public static void readFileByChar(String path) throws IOException {
 
         FileReader fileReader = new FileReader(path);
 
@@ -65,20 +66,17 @@ public class FileDemo {
 
         BufferedReader bufferedReader = new BufferedReader(fileReader);
         String temp = bufferedReader.readLine();
-        while (temp!=null){
+        while (temp != null) {
             System.out.println(temp);
             temp = bufferedReader.readLine();
         }
     }
 
 
-
     /**
-     *
      * 1.字节流写入 逐字节写入
      * 2.自定义一个字节数组 在以字节数组写出(快)
-     *
-    */
+     */
     public static void writeFileByStream(String path) throws IOException {
 
         FileInputStream fileInputStream = new FileInputStream(path);
@@ -89,16 +87,16 @@ public class FileDemo {
         FileOutputStream fileOutputStream = new FileOutputStream(file);
 
 
-        byte[] bytes =new  byte[1024];
+        byte[] bytes = new byte[1024];
 
 
-        while(true){
+        while (true) {
             int length = fileInputStream.read(bytes);
-            if(length==1024){
+            if (length == 1024) {
                 fileOutputStream.write(bytes);
                 fileOutputStream.flush();
-            }else{
-                fileOutputStream.write(bytes,0,length);
+            } else {
+                fileOutputStream.write(bytes, 0, length);
                 fileOutputStream.flush();
                 break;
             }
@@ -112,7 +110,7 @@ public class FileDemo {
     }
 
 
-//    以字符缓冲输入流的读取字符 并以字符缓冲输出流写出
+    //    以字符缓冲输入流的读取字符 并以字符缓冲输出流写出
     public static void writeFileByChar(String path) throws IOException {
         FileReader fileReader = new FileReader(path);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -121,10 +119,10 @@ public class FileDemo {
         FileWriter fileWriter = new FileWriter(file);
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 
-        while(true){
+        while (true) {
 
             String temp = bufferedReader.readLine();
-            if (temp==null) break;
+            if (temp == null) break;
 
             bufferedWriter.write(temp);
             bufferedWriter.newLine();
@@ -136,8 +134,6 @@ public class FileDemo {
 
 
     }
-
-
 
 
 }

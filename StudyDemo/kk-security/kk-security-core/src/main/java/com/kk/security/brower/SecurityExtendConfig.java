@@ -11,16 +11,15 @@ import org.springframework.security.web.authentication.rememberme.PersistentToke
 @Configuration
 public class SecurityExtendConfig {
     @Bean
-    public PasswordEncoder PasswordEncoder(){
+    public PasswordEncoder PasswordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
 
     @Bean
-    public PersistentTokenRepository PersistentTokenRepository(){
+    public PersistentTokenRepository PersistentTokenRepository() {
         return new JdbcTokenRepositoryImpl();
     }
-
 
 
 }

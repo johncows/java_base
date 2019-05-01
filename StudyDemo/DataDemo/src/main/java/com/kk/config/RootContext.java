@@ -15,13 +15,13 @@ import java.awt.image.DirectColorModel;
 import java.sql.DriverManager;
 
 @Configuration
-@ComponentScan(value="com.kk")
+@ComponentScan(value = "com.kk")
 public class RootContext {
 
 
-//    配置数据源 (不建议)
+    //    配置数据源 (不建议)
     @Bean
-    public DataSource dataSource(){
+    public DataSource dataSource() {
         DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource();
         driverManagerDataSource.setDriverClassName("com.mysql.jdbc.Driver");
         driverManagerDataSource.setUrl("jdbc:mysql://localhost:3306/springData?serverTimezone=GMT%2B8");
@@ -31,7 +31,7 @@ public class RootContext {
     }
 
 
-//  配置数据连接池
+    //  配置数据连接池
     @Bean
     public C3P0PooledDataSource c3P0PooledDataSource() throws Exception {
         C3P0PooledDataSource c3P0PooledDataSource = new C3P0PooledDataSource();
@@ -43,19 +43,13 @@ public class RootContext {
     }
 
 
-//    配置jdbc模板类对象
+    //    配置jdbc模板类对象
     @Bean
-    public JdbcOperations jdbcTemplate(DataSource dataSource){
+    public JdbcOperations jdbcTemplate(DataSource dataSource) {
         JdbcTemplate jdbcTemplate = new JdbcTemplate();
         jdbcTemplate.setDataSource(dataSource);
         return jdbcTemplate;
     }
-
-
-
-
-
-
 
 
 }

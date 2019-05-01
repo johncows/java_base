@@ -24,9 +24,10 @@ public class MyUser extends User {
 
     @Override
     public boolean isEnabled() {
-        logger.info(super.isEnabled() +"-----------");
+        logger.info(super.isEnabled() + "-----------");
         return super.isEnabled();
     }
+
     @Override
     public boolean isAccountNonExpired() {
         return super.isAccountNonExpired();

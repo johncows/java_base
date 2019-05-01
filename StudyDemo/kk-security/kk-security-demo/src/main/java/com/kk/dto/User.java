@@ -8,21 +8,24 @@ import org.hibernate.validator.constraints.NotEmpty;
 @Data
 public class User {
 
-  public interface UserSimpleView{}
-  public interface UserDetailView extends UserSimpleView {}
+    public interface UserSimpleView {
+    }
 
-  @JsonView(UserSimpleView.class)
-  private Integer id;
+    public interface UserDetailView extends UserSimpleView {
+    }
 
-  @JsonView(UserSimpleView.class)
-  @NotEmpty(message = "姓名为空 请查看" )
-  private String name;
+    @JsonView(UserSimpleView.class)
+    private Integer id;
 
-  @JsonView(UserSimpleView.class)
-  @MyConstraint(message = "不能为男 也不能为女")
-  private String sex;
+    @JsonView(UserSimpleView.class)
+    @NotEmpty(message = "姓名为空 请查看")
+    private String name;
 
-  @JsonView(UserDetailView.class)
-  private Integer age;
+    @JsonView(UserSimpleView.class)
+    @MyConstraint(message = "不能为男 也不能为女")
+    private String sex;
+
+    @JsonView(UserDetailView.class)
+    private Integer age;
 
 }

@@ -38,17 +38,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private AuthenticationFailureHandler authenticationFailureHandler;
 
 
-
-
-
-
-
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication().withUser("admin").password("883721").roles("USER")
                 .and()
-                .withUser("root").password("883721").roles("USER","ADMIN").accountLocked(true)
-                ;
+                .withUser("root").password("883721").roles("USER", "ADMIN").accountLocked(true)
+        ;
         auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder);
     }
 
@@ -74,8 +69,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .rememberMe().tokenValiditySeconds(600).key("mvcSecurity");
     }
-
-
 
 
 }

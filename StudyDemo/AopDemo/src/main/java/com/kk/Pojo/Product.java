@@ -20,19 +20,18 @@ public class Product {
         this.price = price;
     }
 
-    public void buyProduct(){
-        System.out.println("商品名："+pName+" 商品价格："+price);
-        if(new Random().nextBoolean()){
+    public void buyProduct() {
+        System.out.println("商品名：" + pName + " 商品价格：" + price);
+        if (new Random().nextBoolean()) {
             System.out.println("余额不足 嘟嘟嘟...");
-            int i = 1/0;
+            int i = 1 / 0;
         }
     }
 
 
-    public void checkProductStatus(String message){
+    public void checkProductStatus(String message) {
         System.out.println("执行方法体内部-->" + message);
     }
-
 
 
     @Override

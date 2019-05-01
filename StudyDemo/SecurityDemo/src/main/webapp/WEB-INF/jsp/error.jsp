@@ -11,6 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-        <h1>密码出错 请重新登录</h1>
+<h1>密码出错 请重新登录</h1>
 </body>
 </html>

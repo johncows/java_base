@@ -15,13 +15,12 @@ import java.util.Date;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = RootContext.class)
-public class AppTest 
-{
+public class AppTest {
 
     @Autowired
     private JdbcTemplateDemo jdbcTemplateDemo;
 
-    private User getUser(){
+    private User getUser() {
         User user = new User();
         user.setId(6);
         user.setName("小王");

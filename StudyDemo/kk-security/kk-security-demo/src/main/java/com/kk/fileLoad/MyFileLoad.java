@@ -13,7 +13,7 @@ import java.io.*;
 public class MyFileLoad {
 
     @PostMapping("upload")
-    public void loadFile(MultipartFile file){
+    public void loadFile(MultipartFile file) {
         System.out.println("file.getOriginalFilename() = " + file.getOriginalFilename());
         System.out.println("file.getContentType() = " + file.getContentType());
         System.out.println("file.getSize() = " + file.getSize());

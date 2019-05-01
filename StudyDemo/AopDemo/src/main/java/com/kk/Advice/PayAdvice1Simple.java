@@ -11,11 +11,12 @@ public class PayAdvice1Simple {
 
 
     @Pointcut("execution(* com.kk.Pojo.Product.buyProduct(..))")
-    public void byProduct(){}
+    public void byProduct() {
+    }
 
 
     @Around("byProduct()")
-    public void around(ProceedingJoinPoint joinPoint){
+    public void around(ProceedingJoinPoint joinPoint) {
         try {
             System.out.println("方法执行前");
             joinPoint.proceed();
@@ -28,32 +29,29 @@ public class PayAdvice1Simple {
     }
 
 
-
-
     @Before("byProduct()")
-    public void beforePay(){
+    public void beforePay() {
         System.out.println("查看你的金额 十元");
     }
 
-    public void inPay(){
+    public void inPay() {
         System.out.println("需要支付五元 正在支付中");
     }
 
     @AfterReturning("byProduct()")
-    public void successPay(){
+    public void successPay() {
         System.out.println("支付完成 还剩五元");
     }
 
     @AfterThrowing("byProduct()")
-    public void errorPay(){
+    public void errorPay() {
         System.out.println("请充值");
     }
 
     @After("byProduct()")
-    public  void afterPay(){
+    public void afterPay() {
         System.out.println("交易结束");
     }
-
 
 
 }

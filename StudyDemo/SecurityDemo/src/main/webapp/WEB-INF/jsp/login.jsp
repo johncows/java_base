@@ -11,10 +11,10 @@
     <title>Title</title>
 </head>
 <body>
-    <form action="/toLogin" method="get">
-        姓名<input  type="text" name="name"><br>
-        密码<input  type="password" name="password">
-        <button type="submit"value="点我"/>
-    </form>
+<form action="/toLogin" method="get">
+    姓名<input type="text" name="name"><br>
+    密码<input type="password" name="password">
+    <button type="submit" value="点我"/>
+</form>
 </body>
 </html>

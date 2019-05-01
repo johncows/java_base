@@ -3,12 +3,12 @@ package com.kk;
 import java.util.Objects;
 
 public class Person {
-    private  String name;
+    private String name;
 
     @Override
     public boolean equals(Object o) {
         System.out.println("进行equal比较");
-        System.out.println((Person)o);
+        System.out.println((Person) o);
         if (this == o) return true;
         if (!(o instanceof Person)) return false;
         Person person = (Person) o;
@@ -19,7 +19,7 @@ public class Person {
     public int hashCode() {
         System.out.println("进行哈希运算");
 //        return Objects.hash(getName());
-        return  123;
+        return 123;
     }
 
 

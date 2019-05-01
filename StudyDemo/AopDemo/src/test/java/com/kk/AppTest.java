@@ -23,8 +23,7 @@ import javax.swing.*;
 @RunWith(SpringJUnit4ClassRunner.class)
 //@ContextConfiguration(classes = com.kk.ConcertConfig.class  )
 @ContextConfiguration(locations = "classpath:applicationContext.xml")
-public class AppTest 
-{
+public class AppTest {
     /**
      * Rigorous Test :-)
      */
@@ -33,9 +32,8 @@ public class AppTest
     private Object student;
 
     @Test
-    public void shouldAnswerWithTrue()
-    {
-        SecondHandSell productExtend = (SecondHandSell)student;
+    public void shouldAnswerWithTrue() {
+        SecondHandSell productExtend = (SecondHandSell) student;
         productExtend.productSell();
         People student1 = (People) student;
         student1.speak();

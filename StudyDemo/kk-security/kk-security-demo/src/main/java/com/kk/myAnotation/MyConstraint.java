@@ -9,11 +9,12 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Target({ElementType.FIELD,ElementType.METHOD})
+@Target({ElementType.FIELD, ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = MyConstraintValidator.class)
 public @interface MyConstraint {
-    String message() ;
+    String message();
+
     Class<?>[] groups() default {};
 
     Class<? extends Payload>[] payload() default {};

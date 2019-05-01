@@ -20,12 +20,10 @@ import javax.swing.*;
 //@RunWith(SpringJUnit4ClassRunner.class)
 //@ContextConfiguration(classes = com.kk.ConcertConfig.class  )
 //@ContextConfiguration(locations = "classpath:applicationContext.xml")
-public class AppTest
-{
+public class AppTest {
 
     @Test
-    public void shouldAnswerWithTrue()
-    {
+    public void shouldAnswerWithTrue() {
 //        MyController myController = new MyController();
 
 
@@ -37,8 +35,6 @@ public class AppTest
 
 
         System.out.println(person.toString());
-
-
 
 
     }

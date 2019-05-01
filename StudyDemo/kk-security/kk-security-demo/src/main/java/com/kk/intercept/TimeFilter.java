@@ -23,9 +23,9 @@ public class TimeFilter implements Filter {
         System.out.println("name = " + name);
 
 
-        filterChain.doFilter(servletRequest,servletResponse);
+        filterChain.doFilter(servletRequest, servletResponse);
 
-        System.out.println("在过滤器看来 该处理耗时"+(new Date().getTime()-start)+"毫秒");
+        System.out.println("在过滤器看来 该处理耗时" + (new Date().getTime() - start) + "毫秒");
     }
 
     @Override

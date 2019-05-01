@@ -13,9 +13,9 @@ public class AsyncController {
     private Logger logger = LoggerFactory.getLogger(getClass());
 
     @GetMapping("order1")
-    public Callable<String> order(){
+    public Callable<String> order() {
         logger.info("主线程开始");
-        Callable<String> result = new Callable<String>(){
+        Callable<String> result = new Callable<String>() {
             @Override
             public String call() throws Exception {
                 logger.info("副线程开始");
@@ -27,7 +27,6 @@ public class AsyncController {
         logger.info("主线程结束");
         return result;
     }
-
 
 
 }

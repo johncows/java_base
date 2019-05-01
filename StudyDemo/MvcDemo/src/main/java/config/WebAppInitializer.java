@@ -20,7 +20,7 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
         return new Class[]{RootConfig.class};
     }
 
-//    加载SpringMvc中DispatcherServlet 配置文件
+    //    加载SpringMvc中DispatcherServlet 配置文件
     @Override
     protected Class<?>[] getServletConfigClasses() {
         return new Class[]{WebConfig.class};
@@ -30,8 +30,8 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
         FilterRegistration.Dynamic filter = servletContext.addFilter("characterEncodingFilter", CharacterEncodingFilter.class);
-        filter.setInitParameter("encoding","utf-8");
-        filter.addMappingForUrlPatterns(null,false,"/*");
+        filter.setInitParameter("encoding", "utf-8");
+        filter.addMappingForUrlPatterns(null, false, "/*");
     }
 
     @Override

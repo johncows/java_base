@@ -17,7 +17,7 @@ public class MockQueue {
 
     public void setPlaceOrder(String placeOrder) {
 
-        new Thread(()->{
+        new Thread(() -> {
             logger.info("接到下单请求----" + placeOrder);
             try {
                 Thread.sleep(2000);

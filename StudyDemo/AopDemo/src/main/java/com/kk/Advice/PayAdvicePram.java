@@ -12,16 +12,15 @@ public class PayAdvicePram {
 
 
     @Pointcut("execution(* com.kk.Pojo.Product.checkProductStatus(String))&&args(Status) ")
-    public void checkProductStatus(String Status){}
-
-
-    @Before("checkProductStatus(status)")
-    public void fun1(String status){
-        System.out.println("执行方法前--->" + status);
-        status="hh";
+    public void checkProductStatus(String Status) {
     }
 
 
+    @Before("checkProductStatus(status)")
+    public void fun1(String status) {
+        System.out.println("执行方法前--->" + status);
+        status = "hh";
+    }
 
 
 }

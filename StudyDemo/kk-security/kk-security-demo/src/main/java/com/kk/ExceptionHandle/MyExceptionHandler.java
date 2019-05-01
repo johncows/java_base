@@ -16,10 +16,10 @@ public class MyExceptionHandler {
     @ExceptionHandler(MyException.class)
     @ResponseBody
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public Map<String,Object> handleMyException(MyException myException){
+    public Map<String, Object> handleMyException(MyException myException) {
         HashMap<String, Object> map = new HashMap<>();
-        map.put("message",myException.getMessage());
-        map.put("test","一个测试性参数");
+        map.put("message", myException.getMessage());
+        map.put("test", "一个测试性参数");
         return map;
     }
 }

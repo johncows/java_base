@@ -18,13 +18,13 @@ public class JdbcTemplateDemo {
     private JdbcOperations jdbcOperations;
 
 
-    public void insertUser(User user){
+    public void insertUser(User user) {
         String sql = "insert into user values(?,?,?,?)";
-        jdbcOperations.update(sql,user.getId(),user.getName(),user.getAge(),user.getBirthday());
+        jdbcOperations.update(sql, user.getId(), user.getName(), user.getAge(), user.getBirthday());
     }
 
 
-    public List<User> queryUser(Integer id){
+    public List<User> queryUser(Integer id) {
         String sql = "select * from user where id = ?";
         List<User> users = jdbcOperations.query(sql, new RowMapper<User>() {
             @Override

@@ -15,7 +15,7 @@ public class TimeIntercept implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
         System.out.println("进入拦截器方法中");
-        httpServletRequest.setAttribute("start",new Date().getTime());
+        httpServletRequest.setAttribute("start", new Date().getTime());
         HandlerMethod handlerMethod = (HandlerMethod) o;
         System.out.println("handlerMethod.getMethod().getName() = " + handlerMethod.getMethod().getName());
         Parameter[] parameters = handlerMethod.getMethod().getParameters();
@@ -33,6 +33,6 @@ public class TimeIntercept implements HandlerInterceptor {
 
     @Override
     public void afterCompletion(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e) throws Exception {
-        System.out.println("在拦截器看来 该处理耗时"+(new Date().getTime()-(long)httpServletRequest.getAttribute("start"))+"毫秒");
+        System.out.println("在拦截器看来 该处理耗时" + (new Date().getTime() - (long) httpServletRequest.getAttribute("start")) + "毫秒");
     }
 }

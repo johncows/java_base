@@ -14,7 +14,7 @@ public class ImageCode {
 
     private LocalDateTime expireTime;
 
-public ImageCode(BufferedImage bufferedImage, String code, int expireInt) {
+    public ImageCode(BufferedImage bufferedImage, String code, int expireInt) {
         this.bufferedImage = bufferedImage;
         this.code = code;
         this.expireTime = LocalDateTime.now().plusSeconds(expireInt);
