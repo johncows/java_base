@@ -11,6 +11,12 @@
     
  5.demo05 线程打断方式(强制)
  
-6.线程的synchronized使用
-    
+6.demo06 线程的synchronized使用
+  
+7.demo07 this锁和class锁差异 分别用在哪里
+  
+8.demo08  形成死锁的原因
+
+9.demo09  多线程使用notify的假死
+
    
