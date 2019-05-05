@@ -1,6 +1,6 @@
 package com.kk.demo09;
 
-public class Product {
+public class Product01 {
 
     private int productId = 0;
 
