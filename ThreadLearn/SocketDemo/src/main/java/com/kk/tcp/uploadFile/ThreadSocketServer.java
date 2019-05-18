@@ -10,7 +10,7 @@ import java.net.Socket;
  **/
 public class ThreadSocketServer {
     public static void main(String[] args) throws IOException {
-        ServerSocket serverSocket = new ServerSocket(80800);
+        ServerSocket serverSocket = new ServerSocket(8080);
 
         while (true){
             Socket accept = serverSocket.accept();

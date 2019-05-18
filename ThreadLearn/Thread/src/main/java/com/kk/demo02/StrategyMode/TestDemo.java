@@ -7,7 +7,7 @@ public class TestDemo {
 
         SalaryCount salaryCount = new SalaryCount(10000,200);
 
-        salaryCount.setCalcMode((a,b)-> a*0.9+b*0.5);
+        salaryCount.setCalcMode((a,b)-> a+b);
 
 
         double realSalary = salaryCount.getRealSalary();
