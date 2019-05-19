@@ -11,17 +11,17 @@ import java.net.*;
 public class BaseUDPDemo {
     public static void main(String[] args) throws Exception {
 
-        new Thread(()->{
-            try {
-                Thread.sleep(2000L);
-                function2();
-            } catch (IOException |InterruptedException e) {
-                e.printStackTrace();
-            }
-        }).start();
+//        new Thread(()->{
+//            try {
+//                Thread.sleep(2000L);
+//                function2();
+//            } catch (IOException |InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//        }).start();
 
 
-        function3();
+        function1();
 
 
 
@@ -30,6 +30,7 @@ public class BaseUDPDemo {
 
 
 
+//    获得回环地址对象
     public  static void function1(){
         InetAddress loopbackAddress = InetAddress.getLoopbackAddress();
         System.out.println("loopbackAddress = " + loopbackAddress);
