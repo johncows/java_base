@@ -10,6 +10,8 @@ import java.util.Scanner;
 /**
  * @author KK
  * @create 2019-05-13 17:25
+ *
+ *  实现实时发送功能
  **/
 public class BaseUDPDemo01 {
     public static void main(String[] args) throws Exception {
@@ -34,6 +36,7 @@ public class BaseUDPDemo01 {
 
 
 
+//    接受键盘输入 发送给8080端口
     public static void function2() throws IOException {
         DatagramSocket datagramSocket = new DatagramSocket();
         Scanner scanner = new Scanner(System.in);
@@ -51,7 +54,7 @@ public class BaseUDPDemo01 {
 
     }
 
-
+//  接受8080端口接受到数据
     public static void function3() throws IOException{
         DatagramSocket datagramSocket = new DatagramSocket(8080);
         byte[] data = new byte[1024];
