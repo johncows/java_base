@@ -32,14 +32,6 @@ public class TcpServer {
         OutputStream outputStream = socket.getOutputStream();
         outputStream.write("行了 我已经收到文件了 谢谢".getBytes());
 
-
-        Socket accept = serverSocket.accept();
-
-        if(socket==socket){
-            System.out.println("hello ");
-        }
-
-
         serverSocket.close();
     }
     @Test
