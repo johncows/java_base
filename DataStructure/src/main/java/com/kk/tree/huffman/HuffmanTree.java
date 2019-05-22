@@ -49,8 +49,9 @@ public class HuffmanTree {
 
 
     public static void showHaffmanTree(HuffmanTreeNode huffmanTreeNode){
-        if(huffmanTreeNode == null)
+        if(huffmanTreeNode == null){
                 return;
+        }
         System.out.print(huffmanTreeNode.getWeight()+"<->");
         showHaffmanTree(huffmanTreeNode.getLeft());
         showHaffmanTree(huffmanTreeNode.getRight());
