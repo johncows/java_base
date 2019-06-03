@@ -1,6 +1,6 @@
-package com.kk.tree.graph.undirected_graph;
+package com.kk.graph.undirected_graph;
 
-import com.kk.tree.graph.common.Node;
+import com.kk.graph.common.Node;
 import lombok.Data;
 
 import java.util.ArrayList;

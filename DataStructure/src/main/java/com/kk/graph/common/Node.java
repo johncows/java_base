@@ -1,4 +1,4 @@
-package com.kk.tree.graph.common;
+package com.kk.graph.common;
 
 import lombok.Data;
 
