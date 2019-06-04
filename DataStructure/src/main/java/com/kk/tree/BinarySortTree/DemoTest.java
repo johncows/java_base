@@ -1,7 +1,6 @@
 package com.kk.tree.BinarySortTree;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -13,13 +12,15 @@ import java.util.List;
 public class DemoTest {
     public static void main(String[] args) {
 
-        List<Integer> integers = Arrays.asList(12, 14, 21, 45, 23, 96);
+        List<Integer> integers = Arrays.asList(53,17,9,45,23,78,65,87);
         TreeNode root = BSTree.createBSTree(null, integers);
         BSTree.displayBSTree(root);
         System.out.println();
-        TreeNode treeNode = BSTree.queryKey(root, 92);
+        BSTree.deleteKey(root,53);
+        BSTree.displayBSTree(root);
 
-        System.out.println("treeNode = " + treeNode);
+
+        
 
     }
 }
