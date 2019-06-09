@@ -18,9 +18,11 @@ public class DemoTest {
 //        System.out.println(arrayList);
 
        ArrayList arrayList = new ArrayList<>(Arrays.asList(2, 5, 7, 6, 9, 3, 8, 1, 4));
-        SimpleInsertSort.sort01(arrayList);
-        System.out.println(arrayList);
-
+        int[] ints = {2, 5, 7, 6, 9, 3, 8, 1, 4};
+        HeapSort.sortHeap(ints,ints.length);
+        for (int anInt : ints) {
+            System.out.print(anInt+" ");
+        }
     }
 
 
